@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Digital Time Capsule - Login</title>
+        <link rel="stylesheet" href="/css/styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="icon" href="./assets/images/Time-capsule-logo.png" type="image/x-icon">
+    </head>
+    <body class="auth-page">
+        <div id="transition-overlay" class="transition-overlay" style="opacity: 0; pointer-events: none;"></div>
+        <header class="header">
+            <nav class="nav-container">
+                <div class="logo">
+                    <i class="fas fa-capsules"></i>
+                    <span>TimeCapsule</span>
+                </div>
+                <div class="nav-links">
+                    <button id="dark-mode-toggle" class="nav-link theme-toggle-icon">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <a href="#" onclick="navigateWithMatrixTransition('login.html', 'sign-up.html'); return false;" class="nav-link">Sign Up</a>
+                </div>
+            </nav>
+        </header>
+        <main class="auth-main">
+            <div class="auth-container">
+                <fieldset>
+                    <form class="login-form" id="loginForm" onsubmit="handleLoginWithTransition(event)">
+                        <h3>Login</h3>
+                        <label for="username">Username</label>
+                        <input type="text" name="username" id="username" placeholder="Enter your Username" required>
+                        <label for="password">Password</label>
+                        <input type="password" name="password" id="password" placeholder="Enter your Password" required>
+                        <p id="error"></p>
+                        <div style="text-align: right; margin-bottom: 1rem;">
+                            <a href="#" id="forgot-password-link" style="color: var(--dark-accent-primary); font-size: 0.9rem; text-decoration: none;">Forgot Password?</a>
+                        </div>
+                        <button id="LoginBtn" type="submit">Login</button>
+                        <div class="auth-links">
+                            <p>Don't have an account?</p>
+                            <a href="#" onclick="navigateWithMatrixTransition('login.html', 'sign-up.html'); return false;">Sign Up</a>
+                        </div>
+                    </form>
+                </fieldset>
+            </div>
+        </main>
+
+        <!-- Forgot Password Modal -->
+        <div id="forgot-password-modal" class="modal" style="display: none;">
+            <div class="modal-content" style="max-width: 400px;">
+                <span class="close" id="close-forgot-modal">&times;</span>
+                <div id="forgot-step-1">
+                    <h3><i class="fas fa-key"></i> Reset Password</h3>
+                    <p style="margin-bottom: 1.5rem;">Enter your email address to receive a verification code.</p>
+                    <div class="form-group">
+                        <label for="reset-email">Email Address</label>
+                        <input type="email" id="reset-email" placeholder="Enter your email" style="width: 100%; padding: 0.75rem; margin-bottom: 1rem;">
+                    </div>
+                    <button id="send-reset-code" class="btn-primary" style="width: 100%;">Send Verification Code</button>
+                </div>
+                
+                <div id="forgot-step-2" style="display: none;">
+                    <h3><i class="fas fa-shield-alt"></i> Verify Code</h3>
+                    <p style="margin-bottom: 1.5rem;">Enter the 6-digit code sent to your email.</p>
+                    <div class="form-group">
+                        <label for="verification-code">Verification Code</label>
+                        <input type="text" id="verification-code" placeholder="000000" maxlength="6" style="width: 100%; padding: 0.75rem; margin-bottom: 1rem; text-align: center; font-size: 1.5rem; letter-spacing: 5px;">
+                    </div>
+                    <p id="code-timer" style="text-align: center; color: var(--dark-accent-warning); margin-bottom: 1rem;">Code expires in 15:00</p>
+                    <button id="verify-code" class="btn-primary" style="width: 100%; margin-bottom: 0.5rem;">Verify Code</button>
+                    <button id="resend-code" class="btn-secondary" style="width: 100%;">Resend Code</button>
+                </div>
+                
+                <div id="forgot-step-3" style="display: none;">
+                    <h3><i class="fas fa-lock"></i> New Password</h3>
+                    <p style="margin-bottom: 1.5rem;">Enter your new password.</p>
+                    <div class="form-group">
+                        <label for="new-password">New Password</label>
+                        <input type="password" id="new-password" placeholder="Enter new password" style="width: 100%; padding: 0.75rem; margin-bottom: 1rem;">
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm-new-password">Confirm Password</label>
+                        <input type="password" id="confirm-new-password" placeholder="Confirm new password" style="width: 100%; padding: 0.75rem; margin-bottom: 1rem;">
+                    </div>
+                    <button id="reset-password-btn" class="btn-primary" style="width: 100%;">Reset Password</button>
+                </div>
+            </div>
+        </div>
+        <script src="../js/utils.js"></script>
+        <script src="../js/storage.js"></script>
+        <script src="../js/auth.js"></script>
+        <script src="../js/users.js"></script>
+        <script src="../js/capsules.js"></script>
+        <script src="../js/banSystem.js"></script>
+        <script src="../js/admin.js"></script>
+        <script src="../js/ui.js"></script>
+        <script src="../js/app.js"></script>
+        <script src="../js/loading.js"></script>
+    </body>
+</html>

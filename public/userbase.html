@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Discover Users - TimeCapsule</title>
+        <link rel="stylesheet" href="../css/styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="icon" href="./assets/images/Time-capsule-logo.png" type="image/x-icon">
+    </head>
+    <body>
+        <div id="transition-overlay" class="transition-overlay" style="opacity: 0; pointer-events: none;"></div>
+        <header class="header">
+            <nav class="nav-container">
+                <div class="logo">
+                    <i class="fas fa-capsules"></i>
+                    <span>TimeCapsule</span>
+                </div>
+                <div class="nav-links">
+                    <button id="dark-mode-toggle" class="nav-link theme-toggle-icon">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <a href="Homepage.html" class="nav-link">Dashboard</a>
+                    <a href="userbase.html" class="nav-link active">Discover</a>
+                    <a href="#" onclick="event.preventDefault(); handleLogout();" class="nav-link" id="logout">Logout</a>
+                </div>
+            </nav>
+        </header>
+
+        <main class="userbase-container">
+            <!-- Header Section -->
+            <div class="userbase-header">
+                <h1><i class="fas fa-users"></i> Discover Users</h1>
+                <p>Connect with other time travelers and share memories together</p>
+                
+                <div class="userbase-stats">
+                    <div class="userbase-stat">
+                        <div class="stat-value" id="total-users">0</div>
+                        <div class="stat-label">Total Users</div>
+                    </div>
+                    <div class="userbase-stat">
+                        <div class="stat-value" id="online-users">0</div>
+                        <div class="stat-label">Online Now</div>
+                    </div>
+                    <div class="userbase-stat">
+                        <div class="stat-value" id="your-friends">0</div>
+                        <div class="stat-label">Your Friends</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Search and Filter Section -->
+            <div class="userbase-search-section">
+                <div class="userbase-search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="user-search" placeholder="Search by username...">
+                </div>
+                
+                <div class="userbase-filters">
+                    <button class="userbase-filter-tag active" data-filter="all">
+                        <i class="fas fa-globe"></i> All Users
+                    </button>
+                    <button class="userbase-filter-tag" data-filter="friends">
+                        <i class="fas fa-user-friends"></i> Friends
+                    </button>
+                    <button class="userbase-filter-tag" data-filter="pending">
+                        <i class="fas fa-clock"></i> Pending
+                    </button>
+                    <button class="userbase-filter-tag" data-filter="received">
+                        <i class="fas fa-inbox"></i> Received
+                    </button>
+                    <button class="userbase-filter-tag" data-filter="new">
+                        <i class="fas fa-star"></i> New Users
+                    </button>
+                </div>
+            </div>
+
+            <!-- Users Grid -->
+            <div id="users-grid" class="userbase-grid">
+                <!-- Users will be loaded here dynamically -->
+                <div class="userbase-loading">
+                    <div class="spinner"></div>
+                    <p>Loading users...</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Friend Request Modal -->
+        <div id="friend-request-modal" class="modal friend-request-modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeFriendRequestModal()">&times;</span>
+                <h3><i class="fas fa-user-plus" style="color: #feca57;"></i> Friend Request</h3>
+                <div id="friend-request-content">
+                    <!-- Dynamic content will be inserted here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Success Notification -->
+        <div id="request-success" class="toast" style="position: fixed; top: 20px; right: 20px; z-index: 10000; display: none;">
+            <i class="fas fa-check-circle"></i>
+            <span>Request sent successfully!</span>
+        </div>
+
+        <script src="../js/utils.js"></script>
+        <script src="../js/storage.js"></script>
+        <script src="../js/auth.js"></script>
+        <script src="../js/users.js"></script>
+        <script src="../js/capsules.js"></script>
+        <script src="../js/banSystem.js"></script>
+        <script src="../js/admin.js"></script>
+        <script src="../js/ui.js"></script>
+        <script src="../js/app.js"></script>
+        <script src="../js/userbase.js"></script>
+        <script src="../js/loading.js"></script>
+    </body>
+</html>

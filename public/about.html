@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>About Us - Digital Time Capsule</title>
+        <link rel="stylesheet" href="/css/styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="icon" href="./assets/images/Time-capsule-logo.png" type="image/x-icon">
+    </head>
+    <body>
+        <div id="transition-overlay" class="transition-overlay" style="opacity: 0; pointer-events: none;"></div>
+        <header class="header">
+            <nav class="nav-container">
+                <div class="logo">
+                    <i class="fas fa-capsules"></i>
+                    <span>TimeCapsule</span>
+                </div>
+                <div class="nav-links">
+                    <button id="dark-mode-toggle" class="nav-link theme-toggle-icon">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <a href="landingpage.html" 
+                    onclick="event.preventDefault(); navigateWithLoading('landingpage.html', 'Going to home');" 
+                    class="nav-link">Home</a>
+                    <a href="about.html" 
+                    onclick="event.preventDefault(); navigateWithLoading('about.html', 'Loading about page');" 
+                    class="nav-link active">About</a>
+                    <a href="contact.html" 
+                    onclick="event.preventDefault(); navigateWithLoading('contact.html', 'Loading contact page');" 
+                    class="nav-link">Contact</a>
+                    <a href="sign-up.html" 
+                    onclick="event.preventDefault(); navigateWithLoading('sign-up.html', 'Creating your account');" 
+                    class="nav-link">Sign Up</a>
+                    <a href="login.html" 
+                    onclick="event.preventDefault(); navigateWithLoading('login.html', 'Going to login');" 
+                    class="nav-link">Login</a>
+                    <a href="userbase.html" class="nav-link">Discover</a>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <section class="about-section">
+                <div class="about-header">
+                    <h1>About TimeCapsule</h1>
+                    <p class="hero-description">Preserving memories for future generations</p>
+                </div>
+                
+                <div class="about-content">
+                    <div class="about-card">
+                        <h2><i class="fas fa-rocket"></i> Our Mission</h2>
+                        <p>TimeCapsule was born from a simple idea: memories are precious, and they deserve to be preserved in a secure, meaningful way. We believe that every moment, thought, and feeling you want to save for the future should be protected with the highest level of security while remaining accessible when the time is right.</p>
+                        <p>Our platform combines military-grade encryption with user-friendly features, making it easy for anyone to create digital time capsules that can be unlocked at specific future dates. Whether it's a letter to your future self, memories for your children, or goals you want to achieve, TimeCapsule keeps them safe until you're ready.</p>
+                    </div>
+                    
+                    <div class="about-card">
+                        <h2><i class="fas fa-eye"></i> Our Vision</h2>
+                        <p>We envision a world where digital memories are as treasured and protected as physical ones. Our goal is to become the most trusted platform for digital time capsules, helping millions of people around the world preserve their most precious moments for future generations.</p>
+                        <p>We're constantly innovating, adding new features like our unique meme-protection system that adds a layer of fun to security, and our friend system that allows you to share your capsule journey with loved ones.</p>
+                    </div>
+                </div>
+                
+                <div class="about-card" style="margin-top: 2rem;">
+                    <h2><i class="fas fa-users"></i> Meet the Team</h2>
+                    <div class="team-grid">
+                        <div class="team-member">
+                            <i class="fas fa-user-circle"></i>
+                            <h3>Jebasingh Joshua</h3>
+                            <p>Founder & Lead Developer</p>
+                        </div>
+                        <div class="team-member">
+                            <i class="fas fa-user-circle"></i>
+                            <h3>Jebasingh Joshua</h3>
+                            <p>Security Architect</p>
+                        </div>
+                        <div class="team-member">
+                            <i class="fas fa-user-circle"></i>
+                            <h3>Jebasingh Joshua</h3>
+                            <p>UX Designer</p>
+                        </div>
+                        <div class="team-member">
+                            <i class="fas fa-user-circle"></i>
+                            <h3>Jebasingh Joshua</h3>
+                            <p>Backend Engineer</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="stats-container">
+                    <div class="stat-item">
+                        <div class="stat-number">10,000+</div>
+                        <div class="stat-label">Active Users</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">25,000+</div>
+                        <div class="stat-label">Capsules Created</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">5+</div>
+                        <div class="stat-label">Years Secured</div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-capsules"></i>
+                    <span>TimeCapsule</span>
+                </div>
+                <p class="footer-tagline">Sealing memories for future generations</p>
+                <p class="copyright">&copy; 2024 Digital Time Capsule. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="about.html" class="footer-link">About Us</a>
+                    <a href="contact.html" class="footer-link">Contact</a>
+                    <a href="#" class="footer-link" id="report-issue">Report Issue</a>
+                    <a href="#" class="footer-link" id="request-restore">Request Account Restore</a>
+                    <!-- Updated links to open TermsFeed URLs in new tab -->
+                    <a href="https://www.termsfeed.com/live/e08066e3-01b1-42a9-b02a-b82a14f2c48a" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    class="footer-link">
+                        <i class="fas fa-external-link-alt"></i> Privacy Policy
+                    </a>
+                    <a href="https://www.termsfeed.com/live/b3a0a3fc-7a9e-4487-b080-09ffd1bbfd40" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    class="footer-link">
+                        <i class="fas fa-external-link-alt"></i> Terms of Service
+                    </a>
+                </div>
+            </div>
+        </footer>
+        <script src="../js/utils.js"></script>
+        <script src="../js/storage.js"></script>
+        <script src="../js/auth.js"></script>
+        <script src="../js/users.js"></script>
+        <script src="../js/capsules.js"></script>
+        <script src="../js/banSystem.js"></script>
+        <script src="../js/admin.js"></script>
+        <script src="../js/ui.js"></script>
+        <script src="../js/app.js"></script>
+        <script src="../js/userbase.js"></script>
+        <script src="../js/loading.js"></script>
+    </body>
+</html>
