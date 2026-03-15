@@ -1,0 +1,224 @@
+/* ==================== Investigation Panel Styles ==================== */
+.investigation-card {
+    background: var(--dark-card-bg);
+    border-radius: 12px;
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--dark-border);
+    transition: all 0.3s ease;
+}
+
+.investigation-card:hover {
+    transform: translateX(5px);
+    box-shadow: 0 8px 20px var(--dark-shadow);
+    border-color: var(--dark-accent-primary);
+}
+
+.investigation-card .user-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+
+.investigation-card .user-name {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.investigation-card .user-name i {
+    font-size: 1.2rem;
+}
+
+.investigation-card .timestamp {
+    color: var(--dark-text-muted);
+    font-size: 0.85rem;
+}
+
+.investigation-card .timestamp i {
+    margin-right: 4px;
+}
+
+.investigation-card .action-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 1rem;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-left: 2rem;
+}
+
+.investigation-card .action-badge.success {
+    background: rgba(29, 209, 161, 0.15);
+    color: #1dd1a1;
+    border: 1px solid rgba(29, 209, 161, 0.3);
+}
+
+.investigation-card .action-badge.failure {
+    background: rgba(255, 107, 107, 0.15);
+    color: #ff6b6b;
+    border: 1px solid rgba(255, 107, 107, 0.3);
+}
+
+.investigation-card .user-agent {
+    margin-left: 2rem;
+    margin-top: 0.75rem;
+    background: var(--dark-bg-primary);
+    border-radius: 8px;
+    padding: 0.75rem;
+    font-size: 0.8rem;
+    color: var(--dark-text-muted);
+    border-left: 2px solid var(--dark-accent-primary);
+    word-break: break-all;
+}
+
+.investigation-card .user-agent i {
+    margin-right: 8px;
+    color: var(--dark-accent-primary);
+}
+
+/* Investigation filters */
+.investigation-filters {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.investigation-filters .search-bar {
+    flex: 2;
+    min-width: 250px;
+    display: flex;
+    align-items: center;
+    background: var(--dark-card-bg);
+    border: 2px solid var(--dark-border);
+    border-radius: 8px;
+    padding: 0 1rem;
+}
+
+.investigation-filters .search-bar input {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: none;
+    background: transparent;
+    color: var(--dark-text-primary);
+}
+
+.investigation-filters .search-bar input:focus {
+    outline: none;
+}
+
+.investigation-filters select {
+    flex: 1;
+    min-width: 180px;
+    padding: 0.75rem 1rem;
+    background: var(--dark-card-bg);
+    border: 2px solid var(--dark-border);
+    border-radius: 8px;
+    color: var(--dark-text-primary);
+    cursor: pointer;
+}
+
+.investigation-filters select:hover {
+    border-color: var(--dark-accent-primary);
+}
+
+.investigation-filters select:focus {
+    outline: none;
+    border-color: var(--dark-accent-primary);
+}
+
+/* Stats bar */
+.investigation-stats {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.investigation-stats span {
+    color: var(--dark-text-secondary);
+    font-size: 0.9rem;
+    padding: 0.25rem 0;
+}
+
+.investigation-stats button {
+    margin-left: auto;
+    padding: 0.5rem 1rem;
+    background: var(--dark-accent-primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.investigation-stats button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px var(--dark-glow);
+}
+
+/* Investigation results container */
+.investigation-results {
+    max-height: 60vh;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+}
+
+.investigation-results::-webkit-scrollbar {
+    width: 8px;
+}
+
+.investigation-results::-webkit-scrollbar-track {
+    background: var(--dark-border);
+    border-radius: 10px;
+}
+
+.investigation-results::-webkit-scrollbar-thumb {
+    background: var(--dark-accent-primary);
+    border-radius: 10px;
+}
+
+.investigation-results::-webkit-scrollbar-thumb:hover {
+    background: var(--dark-accent-secondary);
+}
+
+/* Empty state */
+.investigation-empty {
+    text-align: center;
+    color: var(--dark-text-muted);
+    padding: 3rem;
+    font-style: italic;
+    background: var(--dark-card-bg);
+    border-radius: 16px;
+    border: 2px dashed var(--dark-border);
+}
+
+/* Light theme adjustments */
+.light-theme .investigation-card {
+    background: #ffffff;
+}
+
+.light-theme .investigation-card .user-agent {
+    background: #f8faff;
+}
+
+.light-theme .investigation-filters .search-bar,
+.light-theme .investigation-filters select {
+    background: #ffffff;
+    border-color: #e2e8f0;
+}
+
+.light-theme .investigation-filters .search-bar input {
+    color: #1e293b;
+}
+
+.light-theme .investigation-empty {
+    background: #ffffff;
+    border-color: #e2e8f0;
+}

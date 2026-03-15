@@ -1,0 +1,152 @@
+/* ==================== 24. Profile Page ==================== */
+.profile-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.profile-header {
+    background: var(--dark-card-bg);
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.light-theme .profile-header {
+    background: #ffffff;
+}
+
+.avatar-container {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 20px;
+}
+
+.profile-avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--dark-accent-primary);
+}
+
+.avatar-upload {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: var(--dark-accent-primary);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 2px solid white;
+}
+
+.avatar-upload input {
+    display: none;
+}
+
+/* Drafts Section */
+.drafts-section {
+    background: var(--dark-card-bg);
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.light-theme .drafts-section {
+    background: #ffffff;
+}
+
+.draft-card {
+    background: var(--dark-bg-primary);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    border-left: 3px solid #feca57;
+}
+
+.light-theme .draft-card {
+    background: #f8faff;
+}
+
+.draft-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.draft-actions button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Reminders Section */
+.reminders-section {
+    background: var(--dark-card-bg);
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.light-theme .reminders-section {
+    background: #ffffff;
+}
+
+.reminder-card {
+    background: var(--dark-bg-primary);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.light-theme .reminder-card {
+    background: #f8faff;
+}
+
+.reminder-time {
+    color: var(--dark-accent-primary);
+    font-weight: bold;
+}
+
+.light-theme .reminder-time {
+    color: #6c5ce7;
+}
+
+/* Archive Section */
+.archive-section {
+    background: var(--dark-card-bg);
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.light-theme .archive-section {
+    background: #ffffff;
+}
+
+.archive-item {
+    background: var(--dark-bg-primary);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.light-theme .archive-item {
+    background: #f8faff;
+}
+
+.archive-item:hover {
+    opacity: 1;
+}

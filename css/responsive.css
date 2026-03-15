@@ -1,0 +1,176 @@
+/* ==================== 37. Responsive Design ==================== */
+@media (max-width: 1400px) {
+    .admin-panel-simple .stats-grid {
+        gap: 1rem;
+        padding: 1.5rem;
+    }
+    
+    .admin-panel-simple .user-stats {
+        gap: 2rem;
+        padding: 1rem 1.5rem;
+    }
+}
+
+@media (max-width: 1200px) {
+    .modal-xlarge .modal-content-wrapper,
+    .modal-xxlarge .modal-content-wrapper {
+        width: 95%;
+        max-width: 1000px;
+    }
+    
+    .admin-panel-simple .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .admin-panel-simple .user-card {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1.5rem;
+    }
+    
+    .admin-panel-simple .user-info {
+        width: 100%;
+        margin-bottom: 1.5rem;
+    }
+    
+    .admin-panel-simple .user-actions {
+        width: 100%;
+        flex-direction: row;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 992px) {
+    .modal-large .modal-content-wrapper,
+    .modal-xlarge .modal-content-wrapper {
+        width: 90%;
+        max-width: 800px;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-content,
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .stats-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-header h1,
+    .contact-header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .restore-modal-actions {
+        flex-direction: column;
+    }
+    
+    .restore-modal-actions button {
+        width: 100%;
+    }
+    
+    .modal-small .modal-content-wrapper,
+    .modal-medium .modal-content-wrapper,
+    .modal-large .modal-content-wrapper,
+    .modal-xlarge .modal-content-wrapper,
+    .modal-xxlarge .modal-content-wrapper {
+        width: 95%;
+        padding: 1.5rem;
+    }
+    
+    .modal-title {
+        font-size: 1.5rem;
+    }
+    
+    .userbase-header h1 {
+        font-size: 2rem;
+    }
+    
+    .userbase-stats {
+        gap: 1.5rem;
+    }
+    
+    .userbase-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .userbase-filters {
+        justify-content: center;
+    }
+    
+    .admin-panel-simple .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .admin-panel-simple .user-stats {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .admin-panel-simple .user-actions {
+        flex-direction: column;
+    }
+    
+    .admin-panel-simple .admin-header {
+        padding: 1rem 1.5rem;
+    }
+    
+    .admin-panel-simple .stats-grid,
+    .admin-panel-simple .tabs-container,
+    .admin-panel-simple .search-container,
+    .admin-panel-simple .content-area {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-links {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .social-links {
+        flex-wrap: wrap;
+    }
+    
+    .modal-content-wrapper {
+        width: 95%;
+        padding: 1rem;
+    }
+    
+    .notification-item {
+        flex-direction: column;
+    }
+    
+    .notification-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.3rem;
+    }
+    
+    .notifications-tabs {
+        padding: 1rem 1rem 0 1rem;
+    }
+    
+    .notifications-tab {
+        padding: 0.6rem 1rem;
+        font-size: 0.85rem;
+    }
+    
+    .userbase-card-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .userbase-info h3 {
+        justify-content: center;
+    }
+    
+    .userbase-stats-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}

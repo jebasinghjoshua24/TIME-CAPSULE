@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrix Transition - TimeCapsule</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Loading CSS -->
+    <link rel="stylesheet" href="../css/loading.css">
+</head>
+<body class="matrix-transition">
+    <!-- Hidden iframes to preload pages (optional) -->
+    <iframe id="currentPageFrame" class="hidden-frame"></iframe>
+    <iframe id="nextPageFrame" class="hidden-frame"></iframe>
+    
+    <!-- Background Matrix Rain -->
+    <div id="matrixRain" class="matrix-rain"></div>
+    
+    <!-- Matrix Strip -->
+    <div id="matrixStrip" class="matrix-strip">
+        <canvas id="stripCanvas"></canvas>
+    </div>
+    
+    <!-- Loading Message -->
+    <div class="matrix-message" id="loadingMessage">INITIALIZING MATRIX...</div>
+    
+    <!-- Loading JavaScript -->
+    <script src="../js/loading.js"></script>
+</body>
+</html>

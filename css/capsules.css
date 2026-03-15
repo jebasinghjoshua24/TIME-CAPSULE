@@ -1,0 +1,484 @@
+/* ==================== 9. Capsule Cards ==================== */
+.capsule-card {
+    background: var(--dark-card-bg);
+    border-radius: 15px;
+    padding: 20px;
+    border: 1px solid var(--dark-border);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.light-theme .capsule-card {
+    background: #ffffff;
+    border-color: #e2e8f0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.capsule-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px var(--dark-shadow);
+    border-color: var(--dark-accent-primary);
+}
+
+.capsule-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(135deg, var(--dark-accent-primary), var(--dark-accent-secondary));
+}
+
+.capsule-card.favorite {
+    border-color: var(--dark-accent-warning);
+}
+
+.light-theme .capsule-card.favorite {
+    border-color: #d97706;
+}
+
+.capsule-card.pinned {
+    border-color: var(--dark-accent-primary);
+}
+
+.capsule-card.pinned::before {
+    background: linear-gradient(135deg, var(--dark-accent-warning), #ff9f43);
+}
+
+/* Category badge */
+.capsule-category {
+    display: inline-block;
+    background: var(--dark-accent-primary);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: capitalize;
+    letter-spacing: 0.5px;
+}
+
+/* Title */
+.capsule-title {
+    color: var(--dark-text-primary);
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.light-theme .capsule-title {
+    color: #1e293b;
+}
+
+/* Description */
+.capsule-description {
+    color: var(--dark-text-secondary);
+    font-size: 14px;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.light-theme .capsule-description {
+    color: #475569;
+}
+
+/* Tags */
+.capsule-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-bottom: 15px;
+}
+
+.capsule-tag {
+    background: rgba(108, 92, 231, 0.2);
+    color: var(--dark-text-secondary);
+    padding: 3px 10px;
+    border-radius: 15px;
+    font-size: 11px;
+    cursor: pointer;
+    border: 1px solid var(--dark-border);
+    transition: all 0.3s ease;
+}
+
+.light-theme .capsule-tag {
+    background: #f1f5f9;
+    color: #334155;
+    border-color: #e2e8f0;
+}
+
+.capsule-tag:hover {
+    background: var(--dark-accent-primary);
+    color: white;
+    border-color: var(--dark-accent-primary);
+}
+
+/* Meta info */
+.capsule-meta {
+    color: var(--dark-text-muted);
+    font-size: 13px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.light-theme .capsule-meta {
+    color: #64748b;
+}
+
+.capsule-meta i {
+    color: var(--dark-accent-primary);
+    font-size: 12px;
+}
+
+/* Progress bar */
+.capsule-progress {
+    width: 100%;
+    height: 6px;
+    background: var(--dark-border);
+    border-radius: 3px;
+    margin: 15px 0;
+    overflow: hidden;
+}
+
+.light-theme .capsule-progress {
+    background: #e2e8f0;
+}
+
+.capsule-progress-fill {
+    height: 100%;
+    background: linear-gradient(135deg, var(--dark-accent-primary), var(--dark-accent-secondary));
+    border-radius: 3px;
+    transition: width 0.3s ease;
+}
+
+/* Countdown timer */
+.capsule-countdown {
+    color: var(--dark-accent-warning);
+    font-size: 14px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(254, 202, 87, 0.1);
+    padding: 8px 12px;
+    border-radius: 8px;
+}
+
+.light-theme .capsule-countdown {
+    color: #d97706;
+    background: rgba(217, 119, 6, 0.1);
+}
+
+.capsule-countdown i {
+    color: var(--dark-accent-warning);
+}
+
+.light-theme .capsule-countdown i {
+    color: #d97706;
+}
+
+.capsule-countdown .time-value {
+    font-family: 'Orbitron', monospace;
+    font-weight: 500;
+}
+
+/* Action buttons */
+.capsule-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.capsule-btn-primary {
+    flex: 1;
+    padding: 12px;
+    background: linear-gradient(135deg, var(--dark-accent-primary), var(--dark-accent-secondary));
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.capsule-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px var(--dark-glow);
+}
+
+.capsule-btn-secondary {
+    padding: 12px;
+    background: var(--dark-text-muted);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.light-theme .capsule-btn-secondary {
+    background: #94a3b8;
+}
+
+.capsule-btn-secondary:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+}
+
+.capsule-btn-read {
+    flex: 1;
+    padding: 12px;
+    background: var(--dark-accent-success);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.light-theme .capsule-btn-read {
+    background: #059669;
+}
+
+.capsule-btn-read:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+}
+
+/* Icon buttons */
+.capsule-icon-btn {
+    background: none;
+    border: none;
+    color: var(--dark-text-muted);
+    font-size: 18px;
+    cursor: pointer;
+    padding: 0;
+    transition: color 0.3s ease;
+}
+
+.light-theme .capsule-icon-btn {
+    color: #94a3b8;
+}
+
+.capsule-icon-btn:hover {
+    color: var(--dark-accent-primary);
+}
+
+.capsule-icon-btn.active {
+    color: var(--dark-accent-warning);
+}
+
+.capsule-icon-btn.pinned {
+    color: var(--dark-accent-primary);
+}
+
+/* Status badges */
+.capsule-status-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.capsule-badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.capsule-badge.opened {
+    background: var(--dark-accent-success);
+    color: white;
+}
+
+.light-theme .capsule-badge.opened {
+    background: #059669;
+}
+
+.capsule-badge.new {
+    background: var(--dark-accent-warning);
+    color: white;
+}
+
+.light-theme .capsule-badge.new {
+    background: #d97706;
+}
+
+/* Warning message */
+.capsule-warning {
+    margin-top: 12px;
+    font-size: 12px;
+    color: var(--dark-accent-danger);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: rgba(255, 107, 107, 0.1);
+    padding: 6px 10px;
+    border-radius: 6px;
+}
+
+.light-theme .capsule-warning {
+    color: #dc2626;
+    background: rgba(220, 38, 38, 0.1);
+}
+
+/* Owner actions */
+.capsule-owner-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    border-top: 1px solid var(--dark-border);
+    padding-top: 15px;
+}
+
+.light-theme .capsule-owner-actions {
+    border-top-color: #e2e8f0;
+}
+
+.capsule-edit-btn {
+    flex: 1;
+    padding: 8px;
+    background: linear-gradient(135deg, #feca57, #ff9f43);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.light-theme .capsule-edit-btn {
+    background: linear-gradient(135deg, #d97706, #b45309);
+}
+
+.capsule-edit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(254, 202, 87, 0.3);
+}
+
+.capsule-delete-btn {
+    flex: 1;
+    padding: 8px;
+    background: linear-gradient(135deg, #ff6b6b, #c92a2a);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.light-theme .capsule-delete-btn {
+    background: linear-gradient(135deg, #dc2626, #b91c1c);
+}
+
+.capsule-delete-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+}
+
+/* Edit limit indicator */
+.edit-limit-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 8px;
+    background: var(--dark-bg-primary);
+    border-radius: 8px;
+    font-size: 0.85rem;
+}
+
+.light-theme .edit-limit-container {
+    background: #f8faff;
+}
+
+.edit-dots {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.edit-dot {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.edit-dot.used {
+    background: #feca57;
+    color: white;
+}
+
+.edit-dot.used.warning {
+    background: #ff6b6b;
+}
+
+.edit-dot.available {
+    background: var(--dark-border);
+    color: var(--dark-text-muted);
+}
+
+.light-theme .edit-dot.available {
+    background: #e2e8f0;
+    color: #64748b;
+}
+
+.edit-locked-message {
+    margin-top: 8px;
+    font-size: 0.8rem;
+    color: #ff6b6b;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.edit-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Countdown */
+.countdown {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--dark-accent-warning);
+    font-weight: 500;
+}

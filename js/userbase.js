@@ -489,13 +489,25 @@ function showToast(message, type = 'info') {
 
 // ==================== Initialize on Page Load ====================
 document.addEventListener('DOMContentLoaded', function() {
-    // Check if user is logged in
-    if (!currentUser) {
-        window.location.href = 'login.html';
-        return;
-    }
+    // Get the current filename
+    const path = window.location.pathname;
+    const filename = path.split('/').pop() || path;
     
-    initializeUserBase();
+    // ONLY run on userbase.html
+    if (filename === 'userbase.html') {
+        console.log('📱 Initializing userbase page');
+        
+        // Check if user is logged in
+        if (!currentUser) {
+            console.log('🚫 No user logged in, redirecting to login');
+            window.location.href = 'login.html';
+            return;
+        }
+        
+        initializeUserBase();
+    } else {
+        console.log('📱 Not on userbase page, skipping initialization');
+    }
 });
 
 // Export functions

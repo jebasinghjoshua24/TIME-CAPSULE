@@ -18,7 +18,7 @@ body.matrix-transition {
 /* ==================== Matrix Strip ==================== */
 .matrix-strip {
     position: fixed;
-    top: -150px; /* Start above the screen */
+    top: -150px;
     left: 0;
     width: 100%;
     height: 150px;
@@ -29,7 +29,6 @@ body.matrix-transition {
     overflow: hidden;
 }
 
-/* Strip Canvas - contains the binary rain */
 #stripCanvas {
     position: absolute;
     top: 0;
@@ -39,7 +38,6 @@ body.matrix-transition {
     z-index: 1001;
 }
 
-/* Background Matrix Rain (subtle) */
 #matrixRain {
     position: fixed;
     top: 0;
@@ -52,7 +50,6 @@ body.matrix-transition {
     background: black;
 }
 
-/* Matrix Message */
 .matrix-message {
     position: fixed;
     bottom: 30px;
@@ -73,7 +70,6 @@ body.matrix-transition {
     50% { opacity: 0.8; }
 }
 
-/* Strip scanning animation - 2 seconds duration */
 .matrix-strip.scanning {
     animation: scanDown 2s forwards;
     animation-timing-function: linear;
@@ -88,7 +84,6 @@ body.matrix-transition {
     }
 }
 
-/* Hidden iframes for preloading */
 .hidden-frame {
     position: absolute;
     width: 100%;
@@ -99,7 +94,6 @@ body.matrix-transition {
     opacity: 0;
 }
 
-/* Light theme adjustments */
 .light-theme .matrix-strip {
     box-shadow: 0 0 30px #008800;
     border-color: #008800;

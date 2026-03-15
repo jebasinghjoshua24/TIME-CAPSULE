@@ -1,7 +1,15 @@
 // auth.js - Login, Signup, Logout
 
+// ==================== DEBUG ====================
+console.log('🔍 auth.js loaded');
+console.log('Current URL:', window.location.href);
+console.log('Pathname:', window.location.pathname);
+console.log('Filename:', window.location.pathname.split('/').pop());
+
 // ==================== Initialize Auth ====================
 function initializeAuth() {
+    console.log('🚀 initializeAuth() called');
+    
     loadFromStorage();
     
     const savedUser = sessionStorage.getItem('currentUser');
@@ -12,8 +20,12 @@ function initializeAuth() {
     const path = window.location.pathname;
     const filename = path.split('/').pop() || path;
     
-    // List of public pages that don't require login
+    // List of public pages
     const publicPages = ['landingpage.html', 'login.html', 'sign-up.html', 'about.html', 'contact.html', 'loading.html'];
+    
+    console.log('📄 Current filename:', filename);
+    console.log('👤 User logged in:', !!currentUser);
+    console.log('🔓 Is public page?', publicPages.includes(filename));
     
     const loginForm = document.querySelector('.login-form');
     if (loginForm) {
@@ -39,26 +51,32 @@ function initializeAuth() {
         });
     }
     
-    if (currentUser && currentUser.isAdmin && filename === 'Homepage.html') {
-        addAdminButton();
-    }
-    
-    // Only redirect to login if:
-    // 1. User is not logged in
-    // 2. Current page is NOT a public page
-    // 3. Current page requires authentication (like Homepage.html)
-    if (!currentUser && !publicPages.includes(filename)) {
-        navigateWithLoading('login.html', 'Redirecting to login');
-    }
-    
-    // If user IS logged in and tries to access login/signup pages, redirect to homepage
-    if (currentUser && (filename === 'login.html' || filename === 'sign-up.html')) {
-        window.location.href = 'Homepage.html';
+    // If user is not logged in
+    if (!currentUser) {
+        // Allow access to public pages, redirect to login for protected pages
+        if (!publicPages.includes(filename)) {
+            console.log('Redirecting to login - not logged in and page not public');
+            navigateWithLoading('login.html', 'Redirecting to login');
+        } else {
+            console.log('Staying on public page - no redirect');
+        }
+    } 
+    // If user IS logged in
+    else {
+        // Add admin button if needed
+        if (currentUser.isAdmin && filename === 'Homepage.html') {
+            addAdminButton();
+        }
+        
+        // Redirect away from auth pages and landing page to homepage
+        if (filename === 'login.html' || filename === 'sign-up.html' || filename === 'landingpage.html') {
+            console.log('Redirecting to homepage - already logged in');
+            window.location.href = 'Homepage.html';
+        }
     }
 }
 
 // ==================== Login ====================
-// In auth.js - Update handleLogin function
 function handleLogin(e) {
     e.preventDefault();
     const username = document.getElementById('username').value;
@@ -76,7 +94,7 @@ function handleLogin(e) {
     const user = users.find(u => u.username === username && u.password === password);
     
     if (user) {
-        // CHECK BAN STATUS (ADD THIS BLOCK)
+        // CHECK BAN STATUS
         const banCheck = checkBanStatus(user);
         
         if (!banCheck.allowed) {
@@ -161,11 +179,10 @@ function handleSignUp(e) {
         return;
     }
     
-    // In handleSignUp function, update the newUser object:
     const newUser = {
         id: generateId(),
         username,
-        email: username + '@user.local', // Generate a default email or add email field to signup
+        email: username + '@user.local',
         password,
         isAdmin: false,
         createdAt: new Date().toISOString(),
@@ -190,20 +207,17 @@ function handleSignUp(e) {
     }, 1500);
 }
 
-// Add this function to auth.js
+// ==================== Initialize Terms Checkbox ====================
 function initializeTermsCheckbox() {
     const checkbox = document.getElementById('terms-checkbox');
     const submitBtn = document.getElementById('Sign-Up-Btn');
     
     if (checkbox && submitBtn) {
-        // Set initial state
         submitBtn.disabled = !checkbox.checked;
         
-        // Add event listener
         checkbox.addEventListener('change', function() {
             submitBtn.disabled = !this.checked;
             
-            // Optional: Add visual feedback
             if (this.checked) {
                 submitBtn.style.opacity = '1';
                 submitBtn.style.cursor = 'pointer';
@@ -230,7 +244,7 @@ function handleLogout() {
 }
 
 // ==================== Forgot Password ====================
-let resetRequests = {}; // Store reset codes { email: { code, expiry } }
+let resetRequests = {};
 
 function initializeForgotPassword() {
     const forgotLink = document.getElementById('forgot-password-link');
@@ -256,7 +270,6 @@ function initializeForgotPassword() {
         });
     }
     
-    // Close modal when clicking outside
     window.addEventListener('click', (e) => {
         if (e.target === modal) {
             modal.style.display = 'none';
@@ -298,7 +311,6 @@ function resetForgotPasswordModal() {
     document.getElementById('new-password').value = '';
     document.getElementById('confirm-new-password').value = '';
     
-    // Clear any timer
     if (window.codeTimerInterval) {
         clearInterval(window.codeTimerInterval);
     }
@@ -312,52 +324,36 @@ function sendResetCode() {
         return;
     }
     
-    // Check if email exists in users
     const user = users.find(u => u.email === email);
-    
-    // For demo purposes, we'll also check if username looks like an email
-    // In a real app, you'd have email field in user object
     const userByUsername = users.find(u => u.username === email);
     
     if (!user && !userByUsername) {
-        // For security, don't reveal if email exists or not
-        // Still show success message to prevent email enumeration
         showToast('If an account exists with this email, a reset code will be sent', 'info');
         
-        // For demo, we'll still generate a code but not store it
-        // This way it won't work, maintaining security
         setTimeout(() => {
             showForgotPasswordStep(2);
         }, 1500);
         return;
     }
     
-    // Generate 6-digit code
     const resetCode = Math.floor(100000 + Math.random() * 900000).toString();
-    const expiry = Date.now() + (15 * 60 * 1000); // 15 minutes
+    const expiry = Date.now() + (15 * 60 * 1000);
     
-    // Store the reset request
     resetRequests[email] = {
         code: resetCode,
         expiry: expiry,
         userId: user ? user.id : (userByUsername ? userByUsername.id : null)
     };
     
-    // In a real app, you'd send this via email
-    // For demo, we'll show it in a toast (simulating email)
     showToast(`🔐 DEMO MODE: Your verification code is: ${resetCode}`, 'info', 10000);
-    
-    // Also log to console for easy access
     console.log(`%c🔐 RESET CODE for ${email}: ${resetCode}`, 'background: #6c5ce7; color: white; font-size: 14px; padding: 4px;');
     
-    // For demo, we'll also show an "email" modal
     showDemoEmailModal(email, resetCode);
     
     showForgotPasswordStep(2);
 }
 
 function showDemoEmailModal(email, code) {
-    // Create a mini modal showing the "sent" email
     const demoModal = document.createElement('div');
     demoModal.style.cssText = `
         position: fixed;
@@ -391,7 +387,6 @@ function showDemoEmailModal(email, code) {
     
     document.body.appendChild(demoModal);
     
-    // Auto remove after 10 seconds
     setTimeout(() => {
         if (document.body.contains(demoModal)) {
             demoModal.remove();
@@ -401,7 +396,7 @@ function showDemoEmailModal(email, code) {
 
 function startCodeTimer() {
     const timerElement = document.getElementById('code-timer');
-    let timeLeft = 15 * 60; // 15 minutes in seconds
+    let timeLeft = 15 * 60;
     
     if (window.codeTimerInterval) {
         clearInterval(window.codeTimerInterval);
@@ -450,7 +445,6 @@ function verifyResetCode() {
         return;
     }
     
-    // Code is valid
     showToast('Code verified successfully!', 'success');
     showForgotPasswordStep(3);
 }
@@ -463,7 +457,6 @@ function resendResetCode() {
         return;
     }
     
-    // Generate new code
     const resetCode = Math.floor(100000 + Math.random() * 900000).toString();
     const expiry = Date.now() + (15 * 60 * 1000);
     
@@ -476,7 +469,6 @@ function resendResetCode() {
     showToast(`🔐 New code sent: ${resetCode}`, 'info', 5000);
     console.log(`%c🔐 NEW RESET CODE for ${email}: ${resetCode}`, 'background: #6c5ce7; color: white; font-size: 14px; padding: 4px;');
     
-    // Reset timer
     startCodeTimer();
 }
 
@@ -495,7 +487,6 @@ function resetPassword() {
         return;
     }
     
-    // Check password strength
     const strength = checkPasswordStrength(newPassword);
     if (strength.score < 2) {
         showToast('Password too weak. Please choose a stronger password.', 'error');
@@ -509,7 +500,6 @@ function resetPassword() {
         return;
     }
     
-    // Find and update user
     const user = users.find(u => u.id === resetRequest.userId);
     
     if (user) {
@@ -518,18 +508,16 @@ function resetPassword() {
         
         showToast('Password reset successfully! You can now login with your new password.', 'success');
         
-        // Close modal
         document.getElementById('forgot-password-modal').style.display = 'none';
         resetForgotPasswordModal();
         
-        // Clear reset request
         delete resetRequests[email];
     } else {
         showToast('User not found', 'error');
     }
 }
 
-// Add this to your existing initializeAuth function
+// ==================== Override initializeAuth ====================
 const originalInitializeAuth = initializeAuth;
 initializeAuth = function() {
     originalInitializeAuth();
@@ -537,8 +525,7 @@ initializeAuth = function() {
     initializeTermsCheckbox();
 };
 
-// Add this function to handle login with matrix transition
-// Add to auth.js
+// ==================== Login with Transition ====================
 function handleLoginWithTransition(e) {
     e.preventDefault();
     
@@ -549,7 +536,6 @@ function handleLoginWithTransition(e) {
     const user = users.find(u => u.username === username && u.password === password);
     
     if (user) {
-        // Check ban status
         const banCheck = checkBanStatus(user);
         
         if (!banCheck.allowed) {
@@ -563,7 +549,6 @@ function handleLoginWithTransition(e) {
             return;
         }
         
-        // Successful login
         delete loginAttempts[username];
         sessionStorage.removeItem('loginAttempts');
         addSecurityLog(username, 'successful_login', 'Login successful');
@@ -585,7 +570,6 @@ function handleLoginWithTransition(e) {
         saveToStorage();
         sessionStorage.setItem('currentUser', JSON.stringify(currentUser));
         
-        // Use matrix transition to go to homepage
         navigateWithMatrixTransition('login.html', 'Homepage.html');
     } else {
         errorElement.textContent = 'Invalid username or password';
@@ -599,16 +583,7 @@ function handleLoginWithTransition(e) {
     }
 }
 
-// Make sure navigateWithMatrixTransition is available
-// This function should already be in your loading.js
-if (typeof window.navigateWithMatrixTransition !== 'function') {
-    window.navigateWithMatrixTransition = function(from, to) {
-        const transitionUrl = `loading.html?from=${encodeURIComponent(from)}&to=${encodeURIComponent(to)}`;
-        window.location.href = transitionUrl;
-    };
-}
-
-// Add this function to handle signup with matrix transition
+// ==================== Sign Up with Transition ====================
 function handleSignUpWithTransition(e) {
     e.preventDefault();
     
@@ -619,37 +594,31 @@ function handleSignUpWithTransition(e) {
     const termsCheckbox = document.getElementById('terms-checkbox');
     const errorElement = document.getElementById('error');
     
-    // Check if terms are accepted
     if (!termsCheckbox.checked) {
         errorElement.textContent = 'You must agree to the Terms of Service and Privacy Policy';
         return;
     }
     
-    // Check if user was deleted
     if (checkIfUserDeleted(username)) {
         return;
     }
     
-    // Check if passwords match
     if (password !== confirmPassword) {
         errorElement.textContent = 'Passwords do not match';
         return;
     }
     
-    // Check password strength
     const strength = checkPasswordStrength(password);
     if (strength.score < 2) {
         errorElement.textContent = 'Password too weak. Please choose a stronger password.';
         return;
     }
     
-    // Check if username already exists
     if (users.some(u => u.username === username)) {
         errorElement.textContent = 'Username already exists';
         return;
     }
     
-    // Create new user
     const newUser = {
         id: generateId(),
         username,
@@ -676,7 +645,6 @@ function handleSignUpWithTransition(e) {
     
     saveToStorage();
     
-    // Set current user
     currentUser = { 
         username: newUser.username, 
         id: newUser.id,
@@ -686,13 +654,12 @@ function handleSignUpWithTransition(e) {
     
     sessionStorage.setItem('currentUser', JSON.stringify(currentUser));
     
-    // Show success message
     showToast('Account created successfully!', 'success');
     
-    // Use matrix transition to go to homepage
     navigateWithMatrixTransition('sign-up.html', 'Homepage.html');
 }
-// Export functions
+
+// ==================== Export functions ====================
 window.initializeAuth = initializeAuth;
 window.handleLogin = handleLogin;
 window.handleSignUp = handleSignUp;
