@@ -198,27 +198,3 @@
     border-radius: 16px;
     border: 2px dashed var(--dark-border);
 }
-
-/* Light theme adjustments */
-.light-theme .investigation-card {
-    background: #ffffff;
-}
-
-.light-theme .investigation-card .user-agent {
-    background: #f8faff;
-}
-
-.light-theme .investigation-filters .search-bar,
-.light-theme .investigation-filters select {
-    background: #ffffff;
-    border-color: #e2e8f0;
-}
-
-.light-theme .investigation-filters .search-bar input {
-    color: #1e293b;
-}
-
-.light-theme .investigation-empty {
-    background: #ffffff;
-    border-color: #e2e8f0;
-}

@@ -34,10 +34,6 @@
     box-shadow: 0 10px 20px var(--dark-shadow);
 }
 
-.light-theme .about-card {
-    background: #ffffff;
-}
-
 .about-card h2 {
     color: var(--dark-accent-primary);
     margin-bottom: 1rem;
@@ -94,10 +90,6 @@
     border: 1px solid var(--dark-border);
 }
 
-.light-theme .stat-item {
-    background: #ffffff;
-}
-
 .stat-number {
     font-size: 2.5rem;
     font-weight: bold;
@@ -144,10 +136,6 @@
     border: 1px solid var(--dark-border);
 }
 
-.light-theme .contact-info {
-    background: #ffffff;
-}
-
 .contact-info h2 {
     color: var(--dark-accent-primary);
     margin-bottom: 1.5rem;
@@ -165,10 +153,6 @@
     background: var(--dark-bg-primary);
     border-radius: 10px;
     transition: transform 0.3s ease;
-}
-
-.light-theme .contact-detail {
-    background: #f8faff;
 }
 
 .contact-detail:hover {
@@ -235,10 +219,6 @@
     border: 1px solid var(--dark-border);
 }
 
-.light-theme .contact-form {
-    background: #ffffff;
-}
-
 .contact-form h2 {
     color: var(--dark-accent-primary);
     margin-bottom: 1.5rem;
@@ -269,14 +249,6 @@
     color: var(--dark-text-primary);
     font-size: 1rem;
     transition: all 0.3s ease;
-}
-
-.light-theme .contact-form input,
-.light-theme .contact-form select,
-.light-theme .contact-form textarea {
-    background: #f8faff;
-    border-color: #e2e8f0;
-    color: #1e293b;
 }
 
 .contact-form input:focus,
@@ -337,10 +309,6 @@
     padding: 1.5rem;
     border: 1px solid var(--dark-border);
     transition: all 0.3s ease;
-}
-
-.light-theme .faq-item {
-    background: #ffffff;
 }
 
 .faq-item:hover {

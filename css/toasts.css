@@ -21,12 +21,6 @@
     border-left: 4px solid var(--dark-accent-primary);
 }
 
-.light-theme .toast {
-    background: #ffffff;
-    color: #1e293b;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-}
-
 .toast.show {
     transform: translateX(0);
 }
@@ -35,24 +29,12 @@
     border-left-color: #1dd1a1;
 }
 
-.light-theme .toast.success {
-    border-left-color: #059669;
-}
-
 .toast.error {
     border-left-color: #ff6b6b;
 }
 
-.light-theme .toast.error {
-    border-left-color: #dc2626;
-}
-
 .toast.warning {
     border-left-color: #feca57;
-}
-
-.light-theme .toast.warning {
-    border-left-color: #d97706;
 }
 
 .toast.info {

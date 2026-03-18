@@ -24,21 +24,11 @@
     animation: slideIn 0.3s ease;
 }
 
-.light-theme .modal-content {
-    background: #ffffff;
-    border-color: #e2e8f0;
-    color: #1e293b;
-}
-
 .modal-content h3 {
     font-size: 2rem;
     margin-bottom: 1.5rem;
     text-align: center;
     color: var(--dark-accent-primary);
-}
-
-.light-theme .modal-content h3 {
-    color: #6c5ce7;
 }
 
 .modal-content img {
@@ -52,10 +42,6 @@
     color: var(--dark-text-secondary);
     text-align: center;
     font-size: 1.1rem;
-}
-
-.light-theme .modal-content p {
-    color: #475569;
 }
 
 .close {
@@ -100,20 +86,12 @@
     border: 2px solid var(--dark-accent-primary);
 }
 
-.light-theme .capsule-details-content {
-    background: #ffffff;
-}
-
 .capsule-details-content h2 {
     color: var(--dark-accent-primary);
     margin-bottom: 1.5rem;
     display: flex;
     align-items: center;
     gap: 10px;
-}
-
-.light-theme .capsule-details-content h2 {
-    color: #6c5ce7;
 }
 
 .details-grid {
@@ -129,10 +107,6 @@
     border-radius: 10px;
 }
 
-.light-theme .detail-item {
-    background: #f8faff;
-}
-
 .detail-item label {
     display: block;
     color: var(--dark-text-secondary);
@@ -140,18 +114,10 @@
     margin-bottom: 0.25rem;
 }
 
-.light-theme .detail-item label {
-    color: #64748b;
-}
-
 .detail-item span {
     color: var(--dark-text-primary);
     font-size: 1rem;
     font-weight: 500;
-}
-
-.light-theme .detail-item span {
-    color: #1e293b;
 }
 
 .status-badge {
@@ -171,14 +137,6 @@
     color: white;
 }
 
-.light-theme .status-badge.locked {
-    background: #dc2626;
-}
-
-.light-theme .status-badge.unlocked {
-    background: #059669;
-}
-
 .detail-section {
     margin-bottom: 1.5rem;
 }
@@ -189,17 +147,9 @@
     margin-bottom: 0.5rem;
 }
 
-.light-theme .detail-section label {
-    color: #64748b;
-}
-
 .detail-section p {
     color: var(--dark-text-primary);
     line-height: 1.6;
-}
-
-.light-theme .detail-section p {
-    color: #1e293b;
 }
 
 .message-box {
@@ -209,11 +159,6 @@
     color: var(--dark-text-primary);
     font-family: 'Inter', monospace;
     border-left: 4px solid var(--dark-accent-primary);
-}
-
-.light-theme .message-box {
-    background: #f8faff;
-    color: #1e293b;
 }
 
 .capsule-details-content button {
@@ -258,10 +203,6 @@
     border: 2px solid var(--dark-accent-danger);
 }
 
-.light-theme .admin-modal-content {
-    background: #ffffff;
-}
-
 .admin-modal-content h3 {
     color: var(--dark-accent-danger);
     margin-bottom: 1rem;
@@ -270,18 +211,11 @@
     gap: 10px;
 }
 
-.light-theme .admin-modal-content h3 {
-    color: #dc2626;
-}
-
 .admin-modal-content p {
     color: var(--dark-text-secondary);
     margin-bottom: 1.5rem;
 }
 
-.light-theme .admin-modal-content p {
-    color: #64748b;
-}
 
 .admin-modal-content textarea {
     width: 100%;
@@ -293,12 +227,6 @@
     font-size: 1rem;
     margin-bottom: 1.5rem;
     resize: vertical;
-}
-
-.light-theme .admin-modal-content textarea {
-    background: #f8faff;
-    border-color: #e2e8f0;
-    color: #1e293b;
 }
 
 .admin-modal-content textarea:focus {
@@ -327,18 +255,8 @@
     border: 1px solid var(--dark-border);
 }
 
-.light-theme .modal-actions .cancel-btn {
-    background: #f1f5f9;
-    color: #1e293b;
-    border-color: #e2e8f0;
-}
-
 .modal-actions .cancel-btn:hover {
     background: var(--dark-hover);
-}
-
-.light-theme .modal-actions .cancel-btn:hover {
-    background: #e2e8f0;
 }
 
 .modal-actions .confirm-delete-btn {
@@ -377,27 +295,15 @@
     animation: shake 0.5s ease;
 }
 
-.light-theme .deleted-user-modal-content {
-    background: #ffffff;
-}
-
 .deleted-user-modal-content h2 {
     color: var(--dark-accent-danger);
     margin-bottom: 1rem;
     font-size: 2rem;
 }
 
-.light-theme .deleted-user-modal-content h2 {
-    color: #dc2626;
-}
-
 .deleted-user-modal-content p {
     color: var(--dark-text-secondary);
     margin-bottom: 1.5rem;
-}
-
-.light-theme .deleted-user-modal-content p {
-    color: #64748b;
 }
 
 .deletion-info {
@@ -408,17 +314,9 @@
     text-align: left;
 }
 
-.light-theme .deletion-info {
-    background: #f8faff;
-}
-
 .deletion-info h3 {
     color: var(--dark-text-primary);
     margin-bottom: 1rem;
-}
-
-.light-theme .deletion-info h3 {
-    color: #1e293b;
 }
 
 .deletion-info p {
@@ -426,17 +324,9 @@
     margin: 0.5rem 0;
 }
 
-.light-theme .deletion-info p {
-    color: #64748b;
-}
-
 .deletion-message {
     font-style: italic;
     color: var(--dark-accent-warning) !important;
-}
-
-.light-theme .deletion-message {
-    color: #d97706 !important;
 }
 
 .deleted-user-modal-content button {

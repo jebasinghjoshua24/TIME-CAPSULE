@@ -1,36 +1,3 @@
-// ==================== Dark Mode Initialization ====================
-function initializeDarkMode() {
-    const darkModeToggle = document.getElementById('dark-mode-toggle');
-    if (darkModeToggle) {
-        const savedTheme = localStorage.getItem('timeCapsule_theme');
-        const icon = darkModeToggle.querySelector('i');
-        
-        if (savedTheme === 'light') {
-            document.body.classList.add('light-theme');
-            if (icon) icon.className = 'fas fa-sun';
-        } else {
-            document.body.classList.remove('light-theme');
-            if (icon) icon.className = 'fas fa-moon';
-        }
-
-        darkModeToggle.addEventListener('click', function(e) {
-            e.preventDefault();
-            document.body.classList.toggle('light-theme');
-            const icon = this.querySelector('i');
-            
-            if (document.body.classList.contains('light-theme')) {
-                icon.className = 'fas fa-sun';
-                localStorage.setItem('timeCapsule_theme', 'light');
-                if (typeof showToast === 'function') showToast('Switched to Light Mode', 'info', 2000);
-            } else {
-                icon.className = 'fas fa-moon';
-                localStorage.setItem('timeCapsule_theme', 'dark');
-                if (typeof showToast === 'function') showToast('Switched to Dark Mode', 'info', 2000);
-            }
-        });
-    }
-}
-
 // ==================== Initialize Toast Container ====================
 function initializeToastContainer() {
     if (!toastContainer) {
@@ -182,7 +149,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize systems
     initializeAuth();
-    initializeDarkMode();
     initializePasswordStrength();
     initializeToastContainer();
     

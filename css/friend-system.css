@@ -7,10 +7,6 @@
     border: 1px solid var(--dark-border);
 }
 
-.light-theme .friends-section {
-    background: #ffffff;
-}
-
 .friends-header {
     display: flex;
     justify-content: space-between;
@@ -111,10 +107,6 @@
     cursor: pointer;
 }
 
-.light-theme .friend-card {
-    background: #ffffff;
-}
-
 .friend-card:hover {
     transform: translateY(-3px);
     border-color: var(--dark-accent-primary);
@@ -172,10 +164,6 @@
     margin-bottom: 0.5rem;
 }
 
-.light-theme .friend-request-card {
-    background: #ffffff;
-}
-
 .request-actions {
     display: flex;
     gap: 0.5rem;
@@ -230,10 +218,6 @@
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
-}
-
-.light-theme .friend-capsule-card {
-    background: #ffffff;
 }
 
 .friend-capsule-card:hover {

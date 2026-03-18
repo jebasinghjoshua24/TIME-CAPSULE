@@ -23,7 +23,7 @@
                     <button id="dark-mode-toggle" class="nav-link theme-toggle-icon">
                         <i class="fas fa-moon"></i>
                     </button>
-                    <a href="Homepage.html" class="nav-link">Dashboard</a>
+                    <a href="Homepage.html" onclick="event.preventDefault(); sessionStorage.setItem('fromTransition', 'true'); navigateWithMatrixTransition('Homepage.html', 'RETURNING HOME');" class="nav-link">Dashboard</a>
                     <a href="userbase.html" class="nav-link active">Discover</a>
                     <a href="#" onclick="event.preventDefault(); handleLogout();" class="nav-link" id="logout">Logout</a>
                 </div>
@@ -115,6 +115,6 @@
         <script src="../js/ui.js"></script>
         <script src="../js/app.js"></script>
         <script src="../js/userbase.js"></script>
-        <script src="../js/loading.js"></script>
+        <script src="../js/transition.js"></script>
     </body>
 </html>

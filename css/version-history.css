@@ -13,17 +13,9 @@
     transition: all 0.3s ease;
 }
 
-.light-theme .version-item {
-    background: #f8faff;
-}
-
 .version-item:hover {
     background: var(--dark-hover);
     transform: translateX(5px);
-}
-
-.light-theme .version-item:hover {
-    background: #e2e8f0;
 }
 
 .version-item.current {
@@ -52,10 +44,6 @@
     align-items: center;
 }
 
-.light-theme .backup-item {
-    background: #f8faff;
-}
-
 /* ==================== 31. Auto-save Indicator ==================== */
 .auto-save-indicator {
     position: fixed;
@@ -72,10 +60,6 @@
     z-index: 9999;
 }
 
-.light-theme .auto-save-indicator {
-    background: #ffffff;
-}
-
 .auto-save-spinner {
     width: 20px;
     height: 20px;
@@ -83,11 +67,6 @@
     border-top-color: var(--dark-accent-primary);
     border-radius: 50%;
     animation: spin 1s linear infinite;
-}
-
-.light-theme .auto-save-spinner {
-    border-color: #e2e8f0;
-    border-top-color: #6c5ce7;
 }
 
 /* ==================== 32. Share Link ==================== */
@@ -104,12 +83,6 @@
     border-radius: 5px;
     background: var(--dark-bg-primary);
     color: var(--dark-text-primary);
-}
-
-.light-theme .share-link-input {
-    background: #f8faff;
-    border-color: #e2e8f0;
-    color: #1e293b;
 }
 
 .copy-share-btn {
@@ -136,8 +109,4 @@
     align-items: center;
     gap: 10px;
     box-shadow: 0 5px 15px var(--dark-shadow);
-}
-
-.light-theme .edit-mode-indicator {
-    color: #1e293b;
 }

@@ -9,12 +9,6 @@
     overflow: hidden;
 }
 
-.light-theme .capsule-card {
-    background: #ffffff;
-    border-color: #e2e8f0;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-}
-
 .capsule-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 30px var(--dark-shadow);
@@ -33,10 +27,6 @@
 
 .capsule-card.favorite {
     border-color: var(--dark-accent-warning);
-}
-
-.light-theme .capsule-card.favorite {
-    border-color: #d97706;
 }
 
 .capsule-card.pinned {
@@ -68,20 +58,12 @@
     font-weight: 600;
 }
 
-.light-theme .capsule-title {
-    color: #1e293b;
-}
-
 /* Description */
 .capsule-description {
     color: var(--dark-text-secondary);
     font-size: 14px;
     margin-bottom: 15px;
     line-height: 1.5;
-}
-
-.light-theme .capsule-description {
-    color: #475569;
 }
 
 /* Tags */
@@ -103,12 +85,6 @@
     transition: all 0.3s ease;
 }
 
-.light-theme .capsule-tag {
-    background: #f1f5f9;
-    color: #334155;
-    border-color: #e2e8f0;
-}
-
 .capsule-tag:hover {
     background: var(--dark-accent-primary);
     color: white;
@@ -125,10 +101,6 @@
     gap: 5px;
 }
 
-.light-theme .capsule-meta {
-    color: #64748b;
-}
-
 .capsule-meta i {
     color: var(--dark-accent-primary);
     font-size: 12px;
@@ -142,10 +114,6 @@
     border-radius: 3px;
     margin: 15px 0;
     overflow: hidden;
-}
-
-.light-theme .capsule-progress {
-    background: #e2e8f0;
 }
 
 .capsule-progress-fill {
@@ -168,17 +136,8 @@
     border-radius: 8px;
 }
 
-.light-theme .capsule-countdown {
-    color: #d97706;
-    background: rgba(217, 119, 6, 0.1);
-}
-
 .capsule-countdown i {
     color: var(--dark-accent-warning);
-}
-
-.light-theme .capsule-countdown i {
-    color: #d97706;
 }
 
 .capsule-countdown .time-value {
@@ -228,10 +187,6 @@
     transition: all 0.3s ease;
 }
 
-.light-theme .capsule-btn-secondary {
-    background: #94a3b8;
-}
-
 .capsule-btn-secondary:hover {
     transform: translateY(-2px);
     filter: brightness(1.1);
@@ -254,10 +209,6 @@
     transition: all 0.3s ease;
 }
 
-.light-theme .capsule-btn-read {
-    background: #059669;
-}
-
 .capsule-btn-read:hover {
     transform: translateY(-2px);
     filter: brightness(1.1);
@@ -272,10 +223,6 @@
     cursor: pointer;
     padding: 0;
     transition: color 0.3s ease;
-}
-
-.light-theme .capsule-icon-btn {
-    color: #94a3b8;
 }
 
 .capsule-icon-btn:hover {
@@ -313,17 +260,9 @@
     color: white;
 }
 
-.light-theme .capsule-badge.opened {
-    background: #059669;
-}
-
 .capsule-badge.new {
     background: var(--dark-accent-warning);
     color: white;
-}
-
-.light-theme .capsule-badge.new {
-    background: #d97706;
 }
 
 /* Warning message */
@@ -339,11 +278,6 @@
     border-radius: 6px;
 }
 
-.light-theme .capsule-warning {
-    color: #dc2626;
-    background: rgba(220, 38, 38, 0.1);
-}
-
 /* Owner actions */
 .capsule-owner-actions {
     display: flex;
@@ -351,10 +285,6 @@
     margin-top: 15px;
     border-top: 1px solid var(--dark-border);
     padding-top: 15px;
-}
-
-.light-theme .capsule-owner-actions {
-    border-top-color: #e2e8f0;
 }
 
 .capsule-edit-btn {
@@ -372,10 +302,6 @@
     justify-content: center;
     gap: 8px;
     transition: all 0.3s ease;
-}
-
-.light-theme .capsule-edit-btn {
-    background: linear-gradient(135deg, #d97706, #b45309);
 }
 
 .capsule-edit-btn:hover {
@@ -400,10 +326,6 @@
     transition: all 0.3s ease;
 }
 
-.light-theme .capsule-delete-btn {
-    background: linear-gradient(135deg, #dc2626, #b91c1c);
-}
-
 .capsule-delete-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
@@ -419,10 +341,6 @@
     background: var(--dark-bg-primary);
     border-radius: 8px;
     font-size: 0.85rem;
-}
-
-.light-theme .edit-limit-container {
-    background: #f8faff;
 }
 
 .edit-dots {
@@ -455,11 +373,6 @@
 .edit-dot.available {
     background: var(--dark-border);
     color: var(--dark-text-muted);
-}
-
-.light-theme .edit-dot.available {
-    background: #e2e8f0;
-    color: #64748b;
 }
 
 .edit-locked-message {

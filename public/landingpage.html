@@ -42,13 +42,13 @@
                 </p>
                 <div class="cta-buttons" style="display: flex; gap: 20px; justify-content: center; margin-top: 30px;">
                     <!-- Create Capsule CTA - Triggers Matrix transition to Sign Up -->
-                    <a href="#" onclick="event.preventDefault(); navigateWithMatrixTransition('landingpage.html', 'sign-up.html');" class="cta-button">
+                    <a href="sign-up.html" onclick="event.preventDefault(); sessionStorage.setItem('fromTransition', 'true'); navigateWithMatrixTransition('sign-up.html', 'CREATING ACCOUNT');" class="cta-button">
                         <i class="fas fa-capsule"></i>
                         Create a Time Capsule
                     </a>
                     
                     <!-- Login CTA - Triggers Matrix transition to Login -->
-                    <a href="#" onclick="event.preventDefault(); navigateWithMatrixTransition('landingpage.html', 'login.html');" class="cta-button" style="background: linear-gradient(135deg, #1dd1a1, #10ac84);">
+                    <a href="login.html" onclick="event.preventDefault(); sessionStorage.setItem('fromTransition', 'true'); navigateWithMatrixTransition('login.html', 'OPENING LOGIN');" class="cta-button" style="background: linear-gradient(135deg, #1dd1a1, #10ac84);">
                         <i class="fas fa-sign-in-alt"></i>
                         Login to Your Account
                     </a>
@@ -229,6 +229,6 @@
         <script src="../js/ui.js"></script>
         <script src="../js/app.js"></script>
         <script src="../js/userbase.js"></script>
-        <script src="../js/loading.js"></script>
+        <script src="../js/transition.js"></script>
     </body>
 </html>

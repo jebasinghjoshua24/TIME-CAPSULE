@@ -20,17 +20,15 @@
                     <span>TimeCapsule</span>
                 </div>
                 <div class="nav-links">
-                    <button id="dark-mode-toggle" class="nav-link theme-toggle-icon">
-                        <i class="fas fa-moon"></i>
-                    </button>
-                    <a href="#" onclick="navigateWithLoading('login.html', 'Going to login'); return false;" class="nav-link">Login</a>
+                    
+                    <a href="#" onclick="navigateWithMatrixTransition('login.html'); sessionStorage.setItem('fromTransition', 'true'); return false;" class="nav-link">Login</a>
                 </div>
             </nav>
         </header>
         <main class="auth-main">
             <div class="auth-container">
                 <fieldset>
-                    <form class="sign-up-form">
+                    <form class="sign-up-form" onsubmit="handleSignUpWithTransition(event)">
                         <h3>Sign-Up</h3>
                         <label for="username">Username</label>
                         <input type="text" name="username" id="username" placeholder="Enter your Username" required>
@@ -53,13 +51,10 @@
                         </div>
                         
                         <p id="error"></p>
-                        <form class="sign-up-form" onsubmit="handleSignUpWithTransition(event)">
-                            <!-- your form fields -->
-                            <button id="Sign-Up-Btn" type="submit">Sign-Up</button>
-                        </form>
+                        <button id="Sign-Up-Btn" type="submit">Sign-Up</button>
                         <div class="auth-links">
                             <p>Already have an account?</p>
-                            <a href="#" onclick="navigateWithLoading('login.html', 'Going to login'); return false;">Login</a>
+                            <a href="#" onclick="navigateWithMatrixTransition('login.html'); sessionStorage.setItem('fromTransition', 'true'); return false;">Login</a>
                         </div>
                     </form>
                 </fieldset>
@@ -74,6 +69,6 @@
         <script src="../js/admin.js"></script>
         <script src="../js/ui.js"></script>
         <script src="../js/app.js"></script>
-        <script src="../js/loading.js"></script>
+        <script src="../js/transition.js"></script>
     </body>
-</html>s
+</html>

@@ -9,11 +9,6 @@
     box-shadow: 0 2px 20px var(--dark-shadow);
 }
 
-.light-theme .header {
-    background: rgba(255, 255, 255, 0.9);
-    border-bottom-color: #e2e8f0;
-}
-
 .nav-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -161,11 +156,6 @@
     box-shadow: 0 6px 15px var(--dark-glow);
 }
 
-.light-theme .theme-toggle {
-    background: linear-gradient(135deg, #6c5ce7, #0ba5be);
-    color: white;
-}
-
 /* Admin Button in Nav */
 .admin-btn {
     background: linear-gradient(135deg, #feca57, #ff9f43);
@@ -180,10 +170,6 @@
     gap: 8px;
     transition: all 0.3s ease;
     font-weight: 600;
-}
-
-.light-theme .admin-btn {
-    color: #1e293b;
 }
 
 .admin-btn:hover {

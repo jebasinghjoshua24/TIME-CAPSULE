@@ -28,23 +28,6 @@
     color: white;
 }
 
-.light-theme .strength-weak {
-    background: #dc2626;
-}
-
-.light-theme .strength-medium {
-    background: #d97706;
-    color: white;
-}
-
-.light-theme .strength-strong {
-    background: #059669;
-}
-
-.light-theme .strength-very-strong {
-    background: #047857;
-}
-
 /* ==================== 20. Tags System ==================== */
 .tags-container {
     display: flex;
@@ -65,21 +48,9 @@
     margin: 2px;
 }
 
-.light-theme .tag {
-    background: #f1f5f9;
-    color: #334155;
-    border: 1px solid #e2e8f0;
-}
-
 .tag:hover {
     transform: scale(1.05);
     background: var(--dark-accent-secondary);
-}
-
-.light-theme .tag:hover {
-    background: #6c5ce7;
-    color: white;
-    border-color: #6c5ce7;
 }
 
 .tag-input-container {
@@ -95,12 +66,6 @@
     border-radius: 5px;
     background: var(--dark-bg-primary);
     color: var(--dark-text-primary);
-}
-
-.light-theme .tag-input {
-    background: #ffffff;
-    border-color: #e2e8f0;
-    color: #1e293b;
 }
 
 .add-tag-btn {
@@ -130,21 +95,12 @@
     color: var(--dark-accent-primary);
 }
 
-.light-theme .timeline-date {
-    color: #6c5ce7;
-}
-
 .timeline-content {
     flex: 1;
     background: var(--dark-card-bg);
     padding: 15px;
     border-radius: 10px;
     border-left: 3px solid var(--dark-accent-primary);
-}
-
-.light-theme .timeline-content {
-    background: #ffffff;
-    border-left-color: #6c5ce7;
 }
 
 .timeline-item::before {
@@ -155,10 +111,6 @@
     bottom: 0;
     width: 2px;
     background: var(--dark-border);
-}
-
-.light-theme .timeline-item::before {
-    background: #e2e8f0;
 }
 
 /* ==================== 22. Skeleton Loading ==================== */

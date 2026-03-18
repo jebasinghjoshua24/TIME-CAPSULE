@@ -82,12 +82,3 @@
     background: var(--dark-card-bg);
     color: var(--dark-text-primary);
 }
-
-.light-theme .collaborative-section {
-    background: linear-gradient(135deg, rgba(254, 202, 87, 0.02), rgba(255, 159, 67, 0.02));
-    border-color: rgba(254, 202, 87, 0.3);
-}
-
-.light-theme .friend-checkbox-item:hover {
-    background: #f1f5f9;
-}

@@ -93,13 +93,3 @@ body.matrix-transition {
     pointer-events: none;
     opacity: 0;
 }
-
-.light-theme .matrix-strip {
-    box-shadow: 0 0 30px #008800;
-    border-color: #008800;
-}
-
-.light-theme .matrix-message {
-    color: #008800;
-    text-shadow: 0 0 10px #008800;
-}

@@ -23,7 +23,7 @@
                     <button id="dark-mode-toggle" class="nav-link theme-toggle-icon">
                         <i class="fas fa-moon"></i>
                     </button>
-                    <a href="#" onclick="navigateWithMatrixTransition('login.html', 'sign-up.html'); return false;" class="nav-link">Sign Up</a>
+                    <a href="#" onclick="navigateWithMatrixTransition('sign-up.html'); sessionStorage.setItem('fromTransition', 'true'); return false;" class="nav-link">Sign Up</a>
                 </div>
             </nav>
         </header>
@@ -43,7 +43,7 @@
                         <button id="LoginBtn" type="submit">Login</button>
                         <div class="auth-links">
                             <p>Don't have an account?</p>
-                            <a href="#" onclick="navigateWithMatrixTransition('login.html', 'sign-up.html'); return false;">Sign Up</a>
+                            <a href="#" onclick="navigateWithMatrixTransition('sign-up.html'); sessionStorage.setItem('fromTransition', 'true'); return false;">Sign Up</a>
                         </div>
                     </form>
                 </fieldset>
@@ -100,6 +100,6 @@
         <script src="../js/admin.js"></script>
         <script src="../js/ui.js"></script>
         <script src="../js/app.js"></script>
-        <script src="../js/loading.js"></script>
+        <script src="../js/transition.js"></script>
     </body>
 </html>
