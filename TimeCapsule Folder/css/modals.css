@@ -1,0 +1,589 @@
+/* ==================== 10. Modal Styles ==================== */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(5px);
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+    background: var(--dark-card-bg);
+    margin: 5% auto;
+    padding: 2rem;
+    border: 2px solid var(--dark-border);
+    border-radius: 30px;
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+    animation: slideIn 0.3s ease;
+}
+
+.modal-content h3 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: var(--dark-accent-primary);
+}
+
+.modal-content img {
+    max-width: 100%;
+    border-radius: 15px;
+    margin: 1.5rem 0;
+    border: 3px solid var(--dark-border);
+}
+
+.modal-content p {
+    color: var(--dark-text-secondary);
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.close {
+    color: var(--dark-text-muted);
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.close:hover {
+    color: var(--dark-accent-danger);
+    transform: rotate(90deg);
+}
+
+/* Capsule Details Modal */
+.capsule-details-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 11000;
+    backdrop-filter: blur(5px);
+}
+
+.capsule-details-content {
+    background: var(--dark-card-bg);
+    padding: 2rem;
+    border-radius: 30px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    border: 2px solid var(--dark-accent-primary);
+}
+
+.capsule-details-content h2 {
+    color: var(--dark-accent-primary);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.detail-item {
+    background: var(--dark-bg-primary);
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.detail-item label {
+    display: block;
+    color: var(--dark-text-secondary);
+    font-size: 0.85rem;
+    margin-bottom: 0.25rem;
+}
+
+.detail-item span {
+    color: var(--dark-text-primary);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.status-badge.locked {
+    background: var(--dark-accent-danger);
+    color: white;
+}
+
+.status-badge.unlocked {
+    background: var(--dark-accent-success);
+    color: white;
+}
+
+.detail-section {
+    margin-bottom: 1.5rem;
+}
+
+.detail-section label {
+    display: block;
+    color: var(--dark-text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.detail-section p {
+    color: var(--dark-text-primary);
+    line-height: 1.6;
+}
+
+.message-box {
+    background: var(--dark-bg-primary);
+    padding: 1.5rem;
+    border-radius: 10px;
+    color: var(--dark-text-primary);
+    font-family: 'Inter', monospace;
+    border-left: 4px solid var(--dark-accent-primary);
+}
+
+.capsule-details-content button {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, var(--dark-accent-primary), var(--dark-accent-secondary));
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.capsule-details-content button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px var(--dark-glow);
+}
+
+/* Admin Modal */
+.admin-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 11000;
+    backdrop-filter: blur(5px);
+}
+
+.admin-modal-content {
+    background: var(--dark-card-bg);
+    padding: 2rem;
+    border-radius: 30px;
+    max-width: 500px;
+    width: 90%;
+    border: 2px solid var(--dark-accent-danger);
+}
+
+.admin-modal-content h3 {
+    color: var(--dark-accent-danger);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.admin-modal-content p {
+    color: var(--dark-text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+
+.admin-modal-content textarea {
+    width: 100%;
+    padding: 1rem;
+    background: var(--dark-bg-primary);
+    border: 2px solid var(--dark-border);
+    border-radius: 10px;
+    color: var(--dark-text-primary);
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    resize: vertical;
+}
+
+.admin-modal-content textarea:focus {
+    outline: none;
+    border-color: var(--dark-accent-danger);
+}
+
+.modal-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+}
+
+.modal-actions button {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.modal-actions .cancel-btn {
+    background: var(--dark-bg-primary);
+    color: var(--dark-text-primary);
+    border: 1px solid var(--dark-border);
+}
+
+.modal-actions .cancel-btn:hover {
+    background: var(--dark-hover);
+}
+
+.modal-actions .confirm-delete-btn {
+    background: var(--dark-accent-danger);
+    color: white;
+}
+
+.modal-actions .confirm-delete-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+}
+
+/* Deleted User Modal */
+.deleted-user-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 12000;
+    backdrop-filter: blur(10px);
+}
+
+.deleted-user-modal-content {
+    background: var(--dark-card-bg);
+    padding: 3rem;
+    border-radius: 40px;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    border: 2px solid var(--dark-accent-danger);
+    animation: shake 0.5s ease;
+}
+
+.deleted-user-modal-content h2 {
+    color: var(--dark-accent-danger);
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.deleted-user-modal-content p {
+    color: var(--dark-text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.deletion-info {
+    background: var(--dark-bg-primary);
+    padding: 1.5rem;
+    border-radius: 20px;
+    margin: 1.5rem 0;
+    text-align: left;
+}
+
+.deletion-info h3 {
+    color: var(--dark-text-primary);
+    margin-bottom: 1rem;
+}
+
+.deletion-info p {
+    color: var(--dark-text-secondary);
+    margin: 0.5rem 0;
+}
+
+.deletion-message {
+    font-style: italic;
+    color: var(--dark-accent-warning) !important;
+}
+
+.deleted-user-modal-content button {
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, var(--dark-accent-primary), var(--dark-accent-secondary));
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.deleted-user-modal-content button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px var(--dark-glow);
+}
+
+/* Friend Profile Modal */
+.friend-profile-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 11000;
+    backdrop-filter: blur(5px);
+}
+
+.friend-profile-content {
+    background: var(--dark-card-bg);
+    border-radius: 30px;
+    padding: 2rem;
+    max-width: 600px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    border: 2px solid var(--dark-accent-primary);
+    animation: slideInPopup 0.3s ease;
+}
+
+.friend-profile-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--dark-border);
+}
+
+.friend-profile-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #6c5ce7, #a55eea);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.friend-profile-info h2 {
+    color: var(--dark-text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.friend-profile-info p {
+    color: var(--dark-text-secondary);
+}
+
+/* Forgot Password Modal */
+#forgot-password-modal .modal-content {
+    background: var(--dark-card-bg);
+    border: 2px solid var(--dark-accent-primary);
+}
+
+#forgot-password-modal h3 {
+    color: var(--dark-accent-primary);
+    margin-bottom: 1rem;
+}
+
+#forgot-password-modal p {
+    color: var(--dark-text-secondary);
+}
+
+#forgot-password-modal .form-group {
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+#forgot-password-modal label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--dark-text-secondary);
+    font-weight: 500;
+}
+
+#forgot-password-modal input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid var(--dark-border);
+    border-radius: 8px;
+    background: var(--dark-bg-primary);
+    color: var(--dark-text-primary);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+#forgot-password-modal input:focus {
+    outline: none;
+    border-color: var(--dark-accent-primary);
+    box-shadow: 0 0 0 4px var(--dark-glow);
+}
+
+#forgot-password-modal #verification-code {
+    text-align: center;
+    font-size: 1.5rem;
+    letter-spacing: 5px;
+    font-family: monospace;
+}
+
+#forgot-password-modal .btn-primary,
+#forgot-password-modal .btn-secondary {
+    width: 100%;
+    margin-bottom: 0.5rem;
+}
+
+#forgot-password-modal .btn-secondary {
+    background: transparent;
+    border: 2px solid var(--dark-accent-primary);
+    color: var(--dark-accent-primary);
+}
+
+#forgot-password-modal .btn-secondary:hover {
+    background: var(--dark-accent-primary);
+    color: white;
+}
+
+#code-timer {
+    text-align: center;
+    color: var(--dark-accent-warning);
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+/* Restore Modal */
+.restore-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 12000;
+    backdrop-filter: blur(5px);
+}
+
+.restore-modal-content {
+    background: var(--dark-card-bg);
+    border-radius: 30px;
+    padding: 2.5rem;
+    max-width: 500px;
+    width: 90%;
+    border: 2px solid var(--dark-accent-primary);
+    animation: slideInPopup 0.3s ease;
+}
+
+.restore-modal-content h2 {
+    color: var(--dark-accent-primary);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.restore-modal-content p {
+    color: var(--dark-text-secondary);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.restore-modal-content .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.restore-modal-content label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--dark-text-secondary);
+    font-weight: 500;
+}
+
+.restore-modal-content input,
+.restore-modal-content textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px solid var(--dark-border);
+    border-radius: 8px;
+    background: var(--dark-bg-primary);
+    color: var(--dark-text-primary);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.restore-modal-content input:focus,
+.restore-modal-content textarea:focus {
+    outline: none;
+    border-color: var(--dark-accent-primary);
+    box-shadow: 0 0 0 4px var(--dark-glow);
+}
+
+.restore-modal-content textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.restore-modal-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin-top: 2rem;
+}
+
+.restore-modal-actions button {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.restore-modal-actions .cancel-btn {
+    background: var(--dark-bg-primary);
+    color: var(--dark-text-primary);
+    border: 1px solid var(--dark-border);
+}
+
+.restore-modal-actions .cancel-btn:hover {
+    background: var(--dark-hover);
+}
+
+.restore-modal-actions .submit-btn {
+    background: linear-gradient(135deg, var(--dark-accent-primary), var(--dark-accent-secondary));
+    color: white;
+}
+
+.restore-modal-actions .submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px var(--dark-glow);
+}

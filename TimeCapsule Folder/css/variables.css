@@ -1,0 +1,22 @@
+/* ==================== 1. CSS Variables ==================== */
+:root {
+    /* Dark Mode Only - No light theme */
+    --dark-bg-primary: #0a0a1a;
+    --dark-bg-secondary: #1a1a2e;
+    --dark-bg-tertiary: #252542;
+    --dark-text-primary: #ffffff;
+    --dark-text-secondary: #b8b8d4;
+    --dark-text-muted: #6b6b8b;
+    --dark-accent-primary: #6c5ce7;
+    --dark-accent-secondary: #00d2d3;
+    --dark-accent-danger: #ff6b6b;
+    --dark-accent-success: #1dd1a1;
+    --dark-accent-warning: #feca57;
+    --dark-border: #2d2d4a;
+    --dark-card-bg: #1e1e36;
+    --dark-hover: #2a2a45;
+    --dark-shadow: rgba(0, 0, 0, 0.5);
+    --dark-glow: rgba(108, 92, 231, 0.3);
+}
+
+/* Remove the .light-theme section completely */

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Digital Time Capsule - Dashboard</title>
+        <link rel="stylesheet" href="../css/styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="icon" href="./assets/images/Time-capsule-logo.png" type="image/x-icon">
+    </head>
+    <body class="homepage">
+        <div id="transition-overlay" class="transition-overlay" style="opacity: 0; pointer-events: none;"></div>
+        <header class="header">
+            <nav class="nav-container">
+                <div class="logo">
+                    <i class="fas fa-capsules"></i>
+                    <span>TimeCapsule</span>
+                </div>
+                <div class="nav-links">
+                    <div class="notification-badge" id="notification-bell" onclick="showNotifications()">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-count" id="notification-count" style="display: none;">0</span>
+                    </div>
+                    <button id="dark-mode-toggle" class="nav-link theme-toggle-icon">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <a href="#" onclick="event.preventDefault(); handleLogout();" class="nav-link" id="logout">Logout</a>
+                    <a href="userbase.html" onclick="event.preventDefault(); sessionStorage.setItem('fromTransition', 'true'); navigateWithMatrixTransition('userbase.html', 'DISCOVERING USERS');" class="nav-link">Discover</a>
+                </div>
+            </nav>
+        </header>
+
+        <main class="homepage-main">
+            <div class="container">
+                <!-- Stats Dashboard -->
+                <section class="stats-dashboard">
+                    <h2><i class="fas fa-chart-bar"></i> Your Capsule Stats</h2>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <i class="fas fa-capsules"></i>
+                            <div class="stat-info">
+                                <span class="stat-value" id="total-capsules">0</span>
+                                <span class="stat-label">Total Capsules</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-lock"></i>
+                            <div class="stat-info">
+                                <span class="stat-value" id="locked-capsules">0</span>
+                                <span class="stat-label">Locked</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-unlock"></i>
+                            <div class="stat-info">
+                                <span class="stat-value" id="unlocked-capsules">0</span>
+                                <span class="stat-label">Unlocked</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-star"></i>
+                            <div class="stat-info">
+                                <span class="stat-value" id="favorite-capsules">0</span>
+                                <span class="stat-label">Favorites</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Create Capsule Form -->
+                <section class="create-capsule">
+                    <h2><i class="fas fa-plus-circle"></i> Create New Time Capsule</h2>
+                    <form id="capsule-form">
+                        <div class="form-group">
+                            <label for="title">Title *</label>
+                            <input type="text" id="title" required placeholder="Enter capsule title">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="description">Description</label>
+                            <textarea id="description" rows="3" placeholder="What's this capsule about?"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" rows="5" required placeholder="Your precious memories..."></textarea>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="category">Category</label>
+                                <select id="category">
+                                    <option value="personal">Personal</option>
+                                    <option value="work">Work</option>
+                                    <option value="family">Family</option>
+                                    <option value="friends">Friends</option>
+                                    <option value="memories">Memories</option>
+                                    <option value="goals">Goals</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="unlock-date">Unlock Date & Time *</label>
+                                <input type="datetime-local" id="unlock-date" required>
+                            </div>
+                        </div>
+
+                        <!-- ========== NEW COLLABORATION FIELDS ========== -->
+                        <div class="form-group">
+                            <label for="collaboration-type">
+                                <i class="fas fa-users" style="color: var(--dark-accent-primary);"></i> Collaboration Type
+                            </label>
+                            <select id="collaboration-type" onchange="toggleCollaborationFields()">
+                                <option value="private">🔒 Private (Only me)</option>
+                                <option value="friends">👥 All Friends</option>
+                                <option value="specific">✨ Specific Friends</option>
+                                <option value="group">👪 Group Capsule</option>
+                            </select>
+                        </div>
+
+                        <div id="friend-selector" style="display: none;" class="form-group">
+                            <label>Select Friends to Collaborate</label>
+                            <div id="friends-list-container" style="
+                                max-height: 200px;
+                                overflow-y: auto;
+                                background: var(--dark-bg-primary);
+                                border-radius: 12px;
+                                padding: 12px;
+                                border: 2px solid var(--dark-border);
+                                margin-top: 8px;
+                            ">
+                                <!-- Friends will be loaded here dynamically -->
+                                <p style="color: var(--dark-text-muted); text-align: center; padding: 20px;">
+                                    <i class="fas fa-spinner fa-spin"></i> Loading friends...
+                                </p>
+                            </div>
+                            <p style="color: var(--dark-text-muted); font-size: 0.8rem; margin-top: 8px;">
+                                <i class="fas fa-info-circle"></i> Selected friends will be able to view this capsule when unlocked
+                            </p>
+                        </div>
+
+                        <div id="group-input" style="display: none;" class="form-group">
+                            <label for="group-name">Group Name</label>
+                            <input type="text" id="group-name" placeholder="e.g., Family, Project Team, Best Friends">
+                            <p style="color: var(--dark-text-muted); font-size: 0.8rem; margin-top: 5px;">
+                                <i class="fas fa-info-circle"></i> Group capsules can be accessed by all members
+                            </p>
+                        </div>
+                        <!-- ========== END COLLABORATION FIELDS ========== -->
+
+                        <button type="submit" class="btn-primary">
+                            <i class="fas fa-capsule"></i> Create Capsule
+                        </button>
+                    </form>
+                </section>
+
+                <!-- Search and Filter Section -->
+                <section class="search-filter">
+                    <div class="search-bar">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="search-input" placeholder="Search capsules...">
+                    </div>
+                    <div class="filter-options">
+                        <select id="category-filter">
+                            <option value="all">All Categories</option>
+                            <option value="personal">Personal</option>
+                            <option value="work">Work</option>
+                            <option value="family">Family</option>
+                            <option value="friends">Friends</option>
+                            <option value="memories">Memories</option>
+                            <option value="goals">Goals</option>
+                        </select>
+                        <select id="status-filter">
+                            <option value="all">All Status</option>
+                            <option value="locked">Locked</option>
+                            <option value="unlocked">Unlocked</option>
+                        </select>
+                        <button id="favorites-filter" class="filter-btn">
+                            <i class="far fa-star"></i> Favorites
+                        </button>
+                    </div>
+                </section>
+
+                <!-- Locked Capsules Section -->
+                <section class="capsules">
+                    <h2><i class="fas fa-lock"></i> Locked Capsules</h2>
+                    <div id="locked-space" class="capsule-grid"></div>
+                </section>
+
+                <!-- Unlocked Capsules Section -->
+                <section class="opened">
+                    <h2><i class="fas fa-unlock"></i> Unlocked Capsules</h2>
+                    <div id="unlocked-space" class="capsule-grid"></div>
+                </section>
+
+                <!-- ========== NEW COLLABORATIVE CAPSULES SECTION ========== -->
+                <section class="collaborative-section">
+                    <h2><i class="fas fa-users" style="color: #feca57;"></i> Shared With Me</h2>
+                    <div id="collaborative-space" class="capsule-grid"></div>
+                </section>
+                <!-- ========== END COLLABORATIVE CAPSULES SECTION ========== -->
+
+                <!-- Favorites Section -->
+                <section class="favorites">
+                    <h2><i class="fas fa-star"></i> Favorite Capsules</h2>
+                    <div id="favorites-space" class="capsule-grid"></div>
+                </section>
+
+                <!-- Friends Section -->
+                <section id="friends-section-container"></section>
+
+                <!-- Unopened Capsules -->
+                <section class="unopened-section">
+                    <h2><i class="fas fa-gift"></i> Unopened Capsules</h2>
+                    <div id="unopened-space" class="capsule-grid"></div>
+                </section>
+
+                <!-- Opened Capsules -->
+                <section class="opened-section">
+                    <h2><i class="fas fa-check-circle"></i> Opened Capsules</h2>
+                    <div id="opened-space" class="capsule-grid"></div>
+                </section>
+
+                <!-- Archived Capsules -->
+                <section class="archived">
+                    <h2><i class="fas fa-archive"></i> Archived Capsules</h2>
+                    <div id="archived-space" class="capsule-grid"></div>
+                </section>
+
+                <!-- Activity Log -->
+                <section class="activity-log">
+                    <h2><i class="fas fa-history"></i> Recent Activity</h2>
+                    <div id="activity-list" class="activity-list"></div>
+                </section>
+
+                <!-- Export/Import Section -->
+                <section class="data-management">
+                    <h2><i class="fas fa-database"></i> Data Management</h2>
+                    <div class="data-buttons">
+                        <button id="export-data" class="btn-secondary">
+                            <i class="fas fa-download"></i> Export Capsules
+                        </button>
+                        <button id="import-data" class="btn-secondary">
+                            <i class="fas fa-upload"></i> Import Capsules
+                        </button>
+                        <input type="file" id="import-file" accept=".json" style="display: none;">
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Meme Modal -->
+        <div id="meme-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h3><i class="fas fa-grin-squint-tears"></i> Nice Try!</h3>
+                <img id="meme-image" src="" alt="Funny Meme">
+                <p>This capsule is still locked. Come back later!</p>
+            </div>
+        </div>
+
+        <!-- Collaboration Request Modal (Hidden by default) -->
+        <div id="collab-request-modal" class="modal" style="display: none;">
+            <div class="modal-content" style="max-width: 500px;">
+                <span class="close" onclick="document.getElementById('collab-request-modal').style.display='none'">&times;</span>
+                <h3><i class="fas fa-user-plus" style="color: #feca57;"></i> Collaboration Request</h3>
+                <div id="collab-request-content">
+                    <!-- Dynamic content will be inserted here -->
+                </div>
+            </div>
+        </div>
+
+        <script src="../js/utils.js"></script>
+        <script src="../js/storage.js"></script>
+        <script src="../js/auth.js"></script>
+        <script src="../js/users.js"></script>
+        <script src="../js/capsules.js"></script>
+        <script src="../js/banSystem.js"></script>
+        <script src="../js/admin.js"></script>
+        <script src="../js/ui.js"></script>
+        <script src="../js/app.js"></script>
+        <script src="../js/userbase.js"></script>
+        <script src="../js/transition.js"></script>
+    </body>
+</html>

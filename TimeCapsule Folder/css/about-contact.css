@@ -1,0 +1,334 @@
+/* ==================== 12. About Page ==================== */
+.about-section {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.about-header h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--dark-accent-primary), var(--dark-accent-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.about-card {
+    background: var(--dark-card-bg);
+    border-radius: 20px;
+    padding: 2rem;
+    border: 1px solid var(--dark-border);
+    box-shadow: 0 10px 20px var(--dark-shadow);
+}
+
+.about-card h2 {
+    color: var(--dark-accent-primary);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.about-card p {
+    color: var(--dark-text-secondary);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.team-member {
+    text-align: center;
+}
+
+.team-member i {
+    font-size: 4rem;
+    color: var(--dark-accent-primary);
+    margin-bottom: 1rem;
+}
+
+.team-member h3 {
+    color: var(--dark-text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.team-member p {
+    color: var(--dark-text-secondary);
+    font-size: 0.9rem;
+}
+
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.stat-item {
+    background: var(--dark-card-bg);
+    border-radius: 15px;
+    padding: 2rem;
+    border: 1px solid var(--dark-border);
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--dark-accent-primary);
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    color: var(--dark-text-secondary);
+    font-size: 1rem;
+}
+
+/* ==================== 13. Contact Page ==================== */
+.contact-section {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.contact-header h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--dark-accent-primary), var(--dark-accent-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+
+.contact-info {
+    background: var(--dark-card-bg);
+    border-radius: 20px;
+    padding: 2rem;
+    border: 1px solid var(--dark-border);
+}
+
+.contact-info h2 {
+    color: var(--dark-accent-primary);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-detail {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: var(--dark-bg-primary);
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.contact-detail:hover {
+    transform: translateX(5px);
+}
+
+.contact-detail i {
+    font-size: 1.5rem;
+    color: var(--dark-accent-primary);
+    width: 40px;
+    text-align: center;
+}
+
+.contact-detail h3 {
+    color: var(--dark-text-primary);
+    margin-bottom: 0.25rem;
+    font-size: 1rem;
+}
+
+.contact-detail p {
+    color: var(--dark-text-secondary);
+    font-size: 0.9rem;
+}
+
+.contact-detail a {
+    color: var(--dark-accent-primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-detail a:hover {
+    color: var(--dark-accent-secondary);
+    text-decoration: underline;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    justify-content: center;
+}
+
+.social-link {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--dark-accent-primary), var(--dark-accent-secondary));
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    transform: translateY(-5px) rotate(360deg);
+}
+
+.contact-form {
+    background: var(--dark-card-bg);
+    border-radius: 20px;
+    padding: 2rem;
+    border: 1px solid var(--dark-border);
+}
+
+.contact-form h2 {
+    color: var(--dark-accent-primary);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--dark-text-secondary);
+    font-weight: 500;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px solid var(--dark-border);
+    border-radius: 8px;
+    background: var(--dark-bg-primary);
+    color: var(--dark-text-primary);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--dark-accent-primary);
+    box-shadow: 0 0 0 4px var(--dark-glow);
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, var(--dark-accent-primary), var(--dark-accent-secondary));
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.contact-form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px var(--dark-glow);
+}
+
+.faq-section {
+    margin-top: 4rem;
+}
+
+.faq-section h2 {
+    text-align: center;
+    color: var(--dark-accent-primary);
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.faq-item {
+    background: var(--dark-card-bg);
+    border-radius: 15px;
+    padding: 1.5rem;
+    border: 1px solid var(--dark-border);
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--dark-accent-primary);
+}
+
+.faq-item h3 {
+    color: var(--dark-text-primary);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.faq-item h3 i {
+    color: var(--dark-accent-primary);
+}
+
+.faq-item p {
+    color: var(--dark-text-secondary);
+    line-height: 1.6;
+}
